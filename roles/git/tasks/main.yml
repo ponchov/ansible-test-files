@@ -1,3 +1,3 @@
 ---
 - name: Git | Pull repo to remote server
-  git: repo={{ REPO }} dest=/root/
+  git: repo={{ REPO }} dest=/root/verbose-umbrella-test/

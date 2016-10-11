@@ -1,3 +1,6 @@
 ---
+- name: Build | stop any existing task
+  shell: cd /root/verbose-umbrella-test/; docker-compose down
+
 - name: Build | Run Docker-compose
-  shell: cd /root/verbose-umbrella-test/docker-compose; docker-compose up --build -d 
+  shell: cd /root/verbose-umbrella-test/; docker-compose up --build -d

@@ -3,9 +3,9 @@
 #
 
 ---
-- hosts: {{ hosts }}
+- hosts: all
   user: ubuntu
-  sudo: yes
+  become: yes
   roles:
 
 # Install all dependencies
