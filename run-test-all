@@ -1,4 +1,0 @@
-#!/bin/sh
-
-#This is how you must run the ansible script, take the command below as an example
-ansible-playbook ./main.yml --private-key key.pem --check -vvv
