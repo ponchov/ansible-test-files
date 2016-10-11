@@ -1,0 +1,18 @@
+##
+# Ansible playbook for setting up a LAMP development server on Ubuntu 12.04.
+#
+
+---
+- hosts: {{ hosts }}
+  user: ubuntu
+  sudo: yes
+  roles:
+
+# Install all dependencies
+    - dependencies
+# Pull repository
+    - git
+# Build the docker-compose project
+    - build
+  vars_files:
+    - "roles/git/vars/vars.yml"

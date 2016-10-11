@@ -1,0 +1,3 @@
+---
+- name: Build | Run Docker-compose
+  shell: cd /root/verbose-umbrella-test/docker-compose; docker-compose up --build -d 

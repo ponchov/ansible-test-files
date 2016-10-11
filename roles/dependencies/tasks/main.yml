@@ -1,0 +1,19 @@
+---
+# file: roles/common/tasks/main.yml
+- name: Dependencies | Add docker apt keys
+  apt_key: keyserver=hkp://p80.pool.sks-keyservers.net:80 id=58118E89F3A912897C070ADBF76221572C52609D
+
+- name: Dependencies | Update apt
+  apt_repository: repo='deb https://apt.dockerproject.org/repo ubuntu-trusty main' state=present
+
+- name: Dependencies | Install Docker
+  apt: pkg=docker-engine update_cache=yes state=present
+
+- name: Dependencies | Install git
+  apt: pkg=git state=present
+
+- name: Dependencies | install Docker-compose
+  shell: curl -L https://github.com/docker/compose/releases/download/1.8.0/docker-compose-`uname -s`-`uname -m` > /usr/local/bin/docker-compose
+
+- name: Dependencies | Apply executable permissions to docker compose
+  file: path=/usr/local/bin/docker-compose mode="u+x,g+x"
